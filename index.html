@@ -3,16 +3,16 @@
 <head>
 
     <!-- ═══════════════════════════════════════════
-         WAGUAN — Chatting App
+         WAGUAN — Redirect Page
          Author : AHAYO Leonce
-         File   : index.html  (redirects to manager.html)
+         Redirects: waguanapp.netlify.app → waguan.byethost15.com
          ═══════════════════════════════════════════ -->
 
     <!-- ─── Core ─── -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="0; url=manager.html">
+    <meta http-equiv="refresh" content="0; url=https://waguan.byethost15.com/">
 
     <!-- ─── Cache Control ─── -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -45,9 +45,7 @@
     <!-- ─── Appearance / Theme ─── -->
     <meta name="theme-color" content="#0d1117">
     <meta name="msapplication-TileColor" content="#0d1117">
-    <meta name="msapplication-navbutton-color" content="#0d1117">
     <meta name="color-scheme" content="light dark">
-    <meta name="msapplication-tap-highlight" content="no">
     <meta name="format-detection" content="telephone=no, email=no, address=no">
 
     <!-- ─── Mobile / PWA ─── -->
@@ -57,7 +55,6 @@
     <meta name="HandheldFriendly" content="true">
     <meta name="MobileOptimized" content="width">
     <meta name="screen-orientation" content="portrait">
-    <meta name="x5-orientation" content="portrait">
 
     <!-- ─── Privacy ─── -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
@@ -66,7 +63,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Waguan">
     <meta property="og:title" content="Waguan — Chatting App by AHAYO Leonce">
-    <meta property="og:description" content="Waguan, a modern chatting app by AHAYO Leonce. Opening now…">
+    <meta property="og:description" content="Waguan, a modern chatting app by AHAYO Leonce.">
     <meta property="og:url" content="https://waguan.byethost15.com/">
     <meta property="og:locale" content="en_US">
     <meta property="og:image" content="https://waguan.byethost15.com/waguan/logo.png">
@@ -76,29 +73,24 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Waguan — Chatting App">
     <meta name="twitter:description" content="Waguan, a modern chatting app by AHAYO Leonce.">
-    <meta name="twitter:image" content="favicon.png">
+    <meta name="twitter:image" content="https://waguan.byethost15.com/waguan/logo.png">
     <meta name="twitter:creator" content="@ahayoleonce">
     <meta name="twitter:site" content="@waguan">
 
     <!-- ─── Security ─── -->
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 
-    <!-- ─── Performance hints ─── -->
-    <link rel="preload" href="https://waguan.byethost15.com/l" as="document">
+    <!-- ─── Performance hints (pre-load destination) ─── -->
+    <link rel="preconnect" href="https://waguan.byethost15.com" crossorigin>
+    <link rel="dns-prefetch" href="//waguan.byethost15.com">
     <link rel="prefetch" href="https://waguan.byethost15.com/">
-    <link rel="dns-prefetch" href="https://waguan.byethost15.com/l">
-    <link rel="preconnect" href="https://waguan.byethost15.com/l" crossorigin>
 
-    <!-- ─── Icons / Manifest ─── -->
+    <!-- ─── Icons ─── -->
     <link rel="icon" type="image/png" href="https://waguan.byethost15.com/waguan/logo.png">
     <link rel="apple-touch-icon" href="https://waguan.byethost15.com/waguan/logo.png">
-    <link rel="mask-icon" href="https://waguan.byethost15.com/waguan/logo.png" color="#0d1117">
-    <link rel="manifest" href="manifest.json">
 
-    <!-- ─── Canonical ─── -->
+    <!-- ─── Canonical (points to the real app) ─── -->
     <link rel="canonical" href="https://waguan.byethost15.com/">
 
     <title>Waguan — Chatting App by AHAYO Leonce</title>
@@ -110,7 +102,7 @@
       "@type": "WebApplication",
       "name": "Waguan",
       "alternateName": ["Waguan Chat", "Waguan App"],
-      "url": "manager.html",
+      "url": "https://waguan.byethost15.com/",
       "description": "Waguan is a modern chatting app built by AHAYO Leonce.",
       "applicationCategory": "CommunicationApplication",
       "applicationSubCategory": "Messaging",
@@ -130,17 +122,20 @@
     <script>
         (function () {
             "use strict";
+
+            // 🎯 DESTINATION — Byethost app
             var TARGET = "https://waguan.byethost15.com/";
+
+            // Safety: don't redirect if we're somehow already there
+            if (location.hostname.indexOf("byethost15") !== -1) return;
 
             // 1) Instant replace (no back-button entry)
             try { window.location.replace(TARGET); }
             catch (e) { window.location.href = TARGET; }
 
-            // 2) Safety net — if we're still here after 300ms
+            // 2) Safety net — 300ms fallback
             setTimeout(function () {
-                if (location.pathname.indexOf("manager") === -1) {
-                    window.location.href = TARGET;
-                }
+                window.location.href = TARGET;
             }, 300);
         })();
     </script>
@@ -158,7 +153,7 @@
 </head>
 
 <body>
-    <!-- Silent — redirects to manager.html -->
+    <!-- Silent redirect — no content shown -->
 </body>
 
 </html>
