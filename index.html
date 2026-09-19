@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#050508">
 
+<!-- Google Search Console verification -->
+<meta name="google-site-verification" content="EOAE1OyRYAkvsBio-cxcHj6V7p8tcPN6MDMgsz012-s" />
+
 <!-- ============================================
      PRIMARY SEO META
      ============================================ -->
@@ -28,7 +31,7 @@
 <link rel="canonical" href="https://waguanapp.netlify.app/">
 
 <!-- ============================================
-     OPEN GRAPH (Facebook, WhatsApp, LinkedIn)
+     OPEN GRAPH
      ============================================ -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Waguan">
@@ -53,7 +56,7 @@
 <meta name="twitter:creator" content="@ahayoleonce">
 
 <!-- ============================================
-     APP LINKS (mobile deep links)
+     APP LINKS
      ============================================ -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -75,7 +78,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <!-- ============================================
-     STRUCTURED DATA (Schema.org — SoftwareApplication + Organization)
+     STRUCTURED DATA (Schema.org)
      ============================================ -->
 <script type="application/ld+json">
 {
@@ -270,7 +273,7 @@
         50%      { transform: scale(1.08) translate(-8px, -6px); }
     }
 
-    /* Layer 2 — mask that fades the image edges into the page */
+    /* Layer 2 — fade mask */
     .bg-image-fade {
         position: fixed;
         inset: 0;
@@ -332,7 +335,7 @@
         50%      { transform: translate(80px, -40px) scale(1.18); }
     }
 
-    /* Layer 4 — base ambient gradients + top sheen */
+    /* Layer 4 — ambient gradients + top sheen */
     .bg-layer {
         position: fixed;
         inset: 0;
@@ -400,7 +403,6 @@
         color: inherit;
     }
 
-    /* favicon.png back in the header */
     .brand-logo {
         height: clamp(42px, 5.4vw, 60px);
         width: auto;
@@ -420,7 +422,7 @@
         transform: scale(1.05) rotate(-2deg);
     }
 
-    /* Typewriter wordmark — no cursor bar */
+    /* Typewriter wordmark */
     .brand-word-wrap {
         display: inline-flex;
         align-items: center;
@@ -461,14 +463,14 @@
 
     @keyframes typewriter {
         0%   { width: 0; }
-        25%  { width: 6.4ch; }   /* fully typed */
-        55%  { width: 6.4ch; }   /* hold */
-        75%  { width: 0; }       /* cleared */
-        100% { width: 0; }       /* pause */
+        25%  { width: 6.4ch; }
+        55%  { width: 6.4ch; }
+        75%  { width: 0; }
+        100% { width: 0; }
     }
 
     /* ============================================
-       "USE WAGUAN" — advanced button
+       "USE WAGUAN" BUTTON
        ============================================ */
     .use-btn {
         position: relative;
@@ -534,10 +536,7 @@
         pointer-events: none;
     }
 
-    .use-btn > * {
-        position: relative;
-        z-index: 2;
-    }
+    .use-btn > * { position: relative; z-index: 2; }
 
     .use-btn:hover {
         background-position: 100% 50%;
@@ -595,7 +594,6 @@
         padding: 1.25rem 0;
     }
 
-    /* Animated gradient border pill */
     @property --pill-angle {
         syntax: '<angle>';
         initial-value: 0deg;
@@ -657,7 +655,6 @@
         50%      { opacity: .45; transform: scale(.85); }
     }
 
-    /* Hero title — Space Grotesk, gradient shimmer */
     .hero-title {
         font-family: var(--display);
         font-size: clamp(2.1rem, 5.4vw, 3.6rem);
@@ -687,7 +684,6 @@
         50%      { background-position: 100% 50%; }
     }
 
-    /* Hero subtitle — Outfit light */
     .hero-sub {
         font-family: var(--body);
         font-weight: 400;
@@ -1012,7 +1008,7 @@
 </head>
 <body>
 
-    <!-- Hidden SEO text (helps ranking, invisible to users) -->
+    <!-- Hidden SEO text -->
     <div class="seo-hidden" aria-hidden="true">
         <h1>Waguan — Chat, Share &amp; Connect</h1>
         <p>Waguan is a free messaging app created by Ahayo Leonce (Ahayo Leonce Waguan) under DOPC Rwanda.
@@ -1032,9 +1028,7 @@
 
     <div class="page">
 
-        <!-- ============================================
-             HEADER — image + auto-typing wordmark
-             ============================================ -->
+        <!-- HEADER -->
         <header class="site-header">
             <a href="#" class="brand" aria-label="Waguan home — chat, share and connect">
                 <img
@@ -1070,9 +1064,7 @@
             </a>
         </header>
 
-        <!-- ============================================
-             MAIN
-             ============================================ -->
+        <!-- MAIN -->
         <main class="main">
 
             <span class="pill">
@@ -1153,9 +1145,7 @@
 
         </main>
 
-        <!-- ============================================
-             FOOTER
-             ============================================ -->
+        <!-- FOOTER -->
         <footer class="site-footer">
             &copy; <span id="year"></span>
             <span class="wordmark">waguan</span>
